@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "0ee10dce-fdca-415b-96b5-8a629fbc8e43",
+		"name": "BankOperations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8086/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Vitoria\",\n    \"cpf\": \"00000000011\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8086/users/new",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"users",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new Bank Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"name\": \"Vitoria\",\n        \"cpf\": \"00000000011\"\n    },\n    \"accountNumber\": \"0002\",\n    \"balance\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8086/accounts/new",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"accounts",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit some money",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"accountNumber\": \"0001\",\n    \"amount\": 500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8086/accounts/deposit",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"accounts",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer money between 2 accounts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\": {\n        \"name\": \"Denilson\",\n        \"cpf\": \"00000000010\"\n    },\n    \"receiver\": {\n        \"name\": \"Vitoria\",\n        \"cpf\": \"00000000011\"\n    },\n    \"amount\": 50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8086/accounts/transfer",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"accounts",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find User By CPF (Document)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8086/users/00000000014",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"users",
+						"00000000014"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
